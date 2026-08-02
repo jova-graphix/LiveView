@@ -116,7 +116,7 @@ if (lightbox && lightboxImg && lightboxCaption) {
       const img = btn.querySelector('img');
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt;
-      lightboxCaption.textContent = btn.dataset.caption + ' — placeholder image';
+      lightboxCaption.textContent = btn.dataset.caption;
       lightbox.classList.add('active');
     });
   });
