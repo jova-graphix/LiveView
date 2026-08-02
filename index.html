@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LifeView Medical Hospital — Exceptional Healthcare in Accra, Ghana</title>
+<meta name="description" content="LifeView Medical Hospital in Accra offers 24-hour emergency care, family medicine, laboratory services, maternal & child health, and compassionate patient-centred treatment.">
+<meta name="keywords" content="hospital Accra, Accra hospital, emergency care Ghana, LifeView Medical Hospital, clinic Accra, 24 hour hospital Ghana">
+<meta name="theme-color" content="#0B3C6B">
+
+<!-- Open Graph -->
+<meta property="og:title" content="LifeView Medical Hospital — Exceptional Healthcare in Accra, Ghana">
+<meta property="og:description" content="LifeView Medical Hospital in Accra offers 24-hour emergency care, family medicine, laboratory services, maternal & child health, and compassionate patient-centred treatment.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230B3C6B'/%3E%3Cpath d='M3 12h4l2-6 4 12 2-6h6' stroke='%2334D399' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="tailwind-config.js"></script>
+
+<style>
+html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  .font-display { font-family: 'Poppins', sans-serif; }
+
+  ::selection { background: #34D399; color: #06263F; }
+
+  /* Reduced motion respect */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  /* Glassmorphism */
+  .glass {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+  .dark .glass {
+    background: rgba(14,36,56,0.55);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .glass-nav {
+    background: rgba(248,250,252,0.75);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+  }
+  .dark .glass-nav {
+    background: rgba(7,26,43,0.75);
+  }
+
+  /* Signature: the Vital Line — animated ECG pulse used as a recurring motif */
+  .pulse-line-wrap { overflow: hidden; }
+  .pulse-path {
+    stroke-dasharray: 340;
+    stroke-dashoffset: 340;
+    animation: draw-pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes draw-pulse {
+    0% { stroke-dashoffset: 340; opacity: .3; }
+    45% { stroke-dashoffset: 0; opacity: 1; }
+    55% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: -340; opacity: .3; }
+  }
+  .pulse-dot {
+    animation: dot-glow 3.2s ease-in-out infinite;
+  }
+  @keyframes dot-glow {
+    0%,100% { opacity: 0; }
+    48%,52% { opacity: 1; }
+  }
+
+  /* Section divider vital line */
+  .vital-divider { display: block; width: 100%; height: 28px; }
+
+  /* Gradient text */
+  .grad-text {
+    background: linear-gradient(90deg, #0B3C6B, #0E9F6E);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .dark .grad-text { background: linear-gradient(90deg, #5C93BE, #34D399); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  /* Hero gradient background */
+  .hero-gradient {
+    background: radial-gradient(1200px 600px at 85% -10%, rgba(52,211,153,0.14), transparent 60%),
+                radial-gradient(900px 500px at -10% 10%, rgba(11,60,107,0.10), transparent 55%),
+                #F8FAFC;
+  }
+  .dark .hero-gradient {
+    background: radial-gradient(1200px 600px at 85% -10%, rgba(52,211,153,0.10), transparent 60%),
+                radial-gradient(900px 500px at -10% 10%, rgba(28,90,150,0.25), transparent 55%),
+                #071A2B;
+  }
+
+  .card-hover { transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s cubic-bezier(.22,1,.36,1); }
+  .card-hover:hover { transform: translateY(-6px); }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #0B3C6B, #12507F);
+    box-shadow: 0 12px 30px -8px rgba(11,60,107,0.45);
+  }
+  .btn-primary:hover { box-shadow: 0 16px 36px -8px rgba(11,60,107,0.55); }
+  .btn-emerald {
+    background: linear-gradient(135deg, #0E9F6E, #34D399);
+    box-shadow: 0 12px 30px -8px rgba(14,159,110,0.45);
+  }
+
+  /* focus visibility for accessibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 3px solid #34D399; outline-offset: 2px; border-radius: 6px;
+  }
+
+  .skip-link { position:absolute; left:-999px; top:0; background:#0B3C6B; color:white; padding:.75rem 1.25rem; z-index:100; border-radius:0 0 .5rem 0; }
+  .skip-link:focus { left:0; }
+
+  /* Loading screen */
+  #loader { position: fixed; inset:0; z-index: 200; background: #071A2B; display:flex; align-items:center; justify-content:center; transition: opacity .6s ease, visibility .6s ease; }
+  #loader.hide { opacity:0; visibility:hidden; }
+
+  /* accordion */
+  .faq-panel { max-height:0; overflow:hidden; transition: max-height .4s ease; }
+  .faq-item.open .faq-panel { max-height: 400px; }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+  /* custom scrollbar (webkit) */
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #5C93BE; border-radius: 10px; }
+
+  .lightbox { position: fixed; inset:0; z-index:150; background: rgba(6,18,29,0.92); display:none; align-items:center; justify-content:center; padding:2rem; }
+  .lightbox.active { display:flex; }
+</style>
+</head>
+
+<body class="bg-bgsoft dark:bg-navy-950 text-navy-900 dark:text-navy-200 font-body antialiased transition-colors duration-300">
+
+<a href="index.html" class="skip-link">Skip to main content</a>
+
+<!-- Loading Screen -->
+<div id="loader" aria-hidden="true" class="fixed inset-0 z-[200] bg-navy-950 flex items-center justify-center transition-opacity duration-500">
+  <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-navy-800 to-navy-600 grid place-items-center animate-pulse">
+    <i data-lucide="activity" class="w-6 h-6 text-emerald-400"></i>
+  </div>
+</div>
+
+<div id="scrollProgress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-navy-800 to-emerald-400 z-[60]" style="width:0%"></div>
+
+<header class="fixed top-0 inset-x-0 z-50 glass-nav border-b border-navy-800/5 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex items-center justify-between h-[72px]">
+      <a href="index.html" class="flex items-center gap-2.5 group" aria-current="page">
+        <span class="w-10 h-10 rounded-2xl bg-gradient-to-br from-navy-800 to-navy-600 flex items-center justify-center shadow-soft">
+          <i data-lucide="activity" class="w-5 h-5 text-emerald-400"></i>
+        </span>
+        <span class="font-display font-700 text-[17px] leading-tight text-navy-900 dark:text-white">
+          LifeView Medical Hospital<span class="block text-[11px] font-body font-normal tracking-wide text-navy-600 dark:text-navy-200/70">Accra, Ghana</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium" aria-label="Primary">
+        <a href="about.html" class="hover:text-emerald-600 transition-colors">About</a>
+        <a href="services.html" class="hover:text-emerald-600 transition-colors">Services</a>
+        <a href="gallery.html" class="hover:text-emerald-600 transition-colors">Gallery</a>
+        <a href="contact.html#faq" class="hover:text-emerald-600 transition-colors">FAQ</a>
+        <a href="contact.html" class="hover:text-emerald-600 transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button id="darkToggle" aria-label="Toggle dark mode" class="w-10 h-10 rounded-full grid place-items-center border border-navy-800/10 dark:border-white/10 hover:bg-navy-800/5 dark:hover:bg-white/5 transition-colors">
+          <i data-lucide="moon" class="w-[18px] h-[18px] dark:hidden"></i>
+          <i data-lucide="sun" class="w-[18px] h-[18px] hidden dark:block text-emerald-400"></i>
+        </button>
+        <a href="tel:0244287334" class="hidden md:flex items-center gap-2 text-sm font-semibold text-navy-800 dark:text-emerald-400">
+          <i data-lucide="phone-call" class="w-4 h-4"></i> 024 428 7334
+        </a>
+        <a href="appointment.html" class="hidden sm:inline-flex btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:-translate-y-0.5 transition-transform">
+          Book Appointment
+        </a>
+        <button id="menuBtn" aria-label="Open menu" aria-expanded="false" class="lg:hidden w-10 h-10 rounded-full grid place-items-center border border-navy-800/10 dark:border-white/10">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="lg:hidden hidden glass-nav border-t border-navy-800/5 dark:border-white/5">
+    <nav class="px-5 py-4 flex flex-col gap-1 text-[15px] font-medium" aria-label="Mobile">
+      <a href="about.html" class="py-2.5 border-b border-navy-800/5 dark:border-white/5">About</a>
+      <a href="services.html" class="py-2.5 border-b border-navy-800/5 dark:border-white/5">Services</a>
+      <a href="gallery.html" class="py-2.5 border-b border-navy-800/5 dark:border-white/5">Gallery</a>
+      <a href="contact.html#faq" class="py-2.5 border-b border-navy-800/5 dark:border-white/5">FAQ</a>
+      <a href="contact.html" class="py-2.5 border-b border-navy-800/5 dark:border-white/5">Contact</a>
+      <a href="appointment.html" class="mt-3 btn-primary text-white text-center text-sm font-semibold px-5 py-3 rounded-full">Book Appointment</a>
+      <a href="tel:0244287334" class="mt-2 text-center text-sm font-semibold text-navy-800 dark:text-emerald-400 py-2">Call 024 428 7334</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero-gradient pt-36 pb-20 lg:pt-44 lg:pb-28 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-400/10 px-4 py-2 rounded-full">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Open 24 Hours · Monday – Sunday
+      </span>
+      <h1 class="font-display font-800 text-[2.4rem] leading-[1.12] sm:text-5xl lg:text-[3.4rem] mt-6 text-navy-900 dark:text-white">
+        Exceptional Healthcare, <span class="grad-text">Delivered with Compassion</span>
+      </h1>
+      <p class="mt-6 text-lg text-navy-700/90 dark:text-navy-200/80 max-w-xl">
+        Providing quality healthcare services 24 hours a day for individuals and families in Accra — combining modern medical technology with genuine, patient-centred care.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a href="appointment.html" class="btn-primary text-white font-semibold px-7 py-4 rounded-full inline-flex items-center gap-2 hover:-translate-y-0.5 transition-transform">
+          <i data-lucide="calendar-check" class="w-[18px] h-[18px]"></i> Book Appointment
+        </a>
+        <a href="tel:0244287334" class="btn-emerald text-white font-semibold px-7 py-4 rounded-full inline-flex items-center gap-2 hover:-translate-y-0.5 transition-transform">
+          <i data-lucide="phone" class="w-[18px] h-[18px]"></i> Call Now
+        </a>
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        <div class="flex items-center gap-2 text-navy-700 dark:text-navy-200/80"><i data-lucide="clock" class="w-4 h-4 text-emerald-600"></i> 24/7 Emergency Care</div>
+        <div class="flex items-center gap-2 text-navy-700 dark:text-navy-200/80"><i data-lucide="stethoscope" class="w-4 h-4 text-emerald-600"></i> Experienced Medical Staff</div>
+        <div class="flex items-center gap-2 text-navy-700 dark:text-navy-200/80"><i data-lucide="scan-line" class="w-4 h-4 text-emerald-600"></i> Modern Equipment</div>
+      </div>
+    </div>
+
+    <div class="reveal relative">
+      <!-- Custom illustrated hero visual: modern hospital + vital line signature -->
+      <div class="relative rounded-3xl overflow-hidden shadow-softlg aspect-[4/3.1] bg-gradient-to-br from-navy-50 via-white to-emerald-50">
+        <svg viewBox="0 0 600 460" class="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="skyg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#EAF4FB"/>
+              <stop offset="100%" stop-color="#D6F5E8"/>
+            </linearGradient>
+            <linearGradient id="bldg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="100%" stop-color="#EAF4FB"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="460" fill="url(#skyg)"/>
+          <!-- soft ambient blobs -->
+          <circle cx="90" cy="90" r="90" fill="#34D399" opacity="0.10"/>
+          <circle cx="520" cy="60" r="70" fill="#2E86C1" opacity="0.10"/>
+          <!-- building -->
+          <rect x="150" y="150" width="300" height="230" rx="14" fill="url(#bldg)" stroke="#C3DAEC" stroke-width="2"/>
+          <rect x="185" y="180" width="230" height="200" rx="8" fill="#FFFFFF" opacity="0.9"/>
+          <!-- windows grid -->
+          <g fill="#2E86C1" opacity="0.35">
+            <rect x="205" y="200" width="26" height="26" rx="4"/><rect x="245" y="200" width="26" height="26" rx="4"/><rect x="285" y="200" width="26" height="26" rx="4"/><rect x="325" y="200" width="26" height="26" rx="4"/><rect x="365" y="200" width="26" height="26" rx="4"/>
+            <rect x="205" y="240" width="26" height="26" rx="4"/><rect x="245" y="240" width="26" height="26" rx="4"/><rect x="285" y="240" width="26" height="26" rx="4"/><rect x="325" y="240" width="26" height="26" rx="4"/><rect x="365" y="240" width="26" height="26" rx="4"/>
+            <rect x="205" y="280" width="26" height="26" rx="4"/><rect x="245" y="280" width="26" height="26" rx="4"/><rect x="285" y="280" width="26" height="26" rx="4" fill="#0E9F6E" opacity="0.9"/><rect x="325" y="280" width="26" height="26" rx="4"/><rect x="365" y="280" width="26" height="26" rx="4"/>
+            <rect x="205" y="320" width="26" height="26" rx="4"/><rect x="245" y="320" width="26" height="26" rx="4"/><rect x="285" y="320" width="26" height="26" rx="4"/><rect x="325" y="320" width="26" height="26" rx="4" fill="#0E9F6E" opacity="0.9"/><rect x="365" y="320" width="26" height="26" rx="4"/>
+          </g>
+          <!-- entrance -->
+          <rect x="270" y="345" width="60" height="35" rx="4" fill="#0E9F6E" opacity="0.9"/>
+          <!-- cross sign -->
+          <g transform="translate(300,115)">
+            <circle r="36" fill="#FFFFFF"/>
+            <circle r="36" fill="none" stroke="#0E9F6E" stroke-width="3"/>
+            <rect x="-6" y="-18" width="12" height="36" rx="3" fill="#0E9F6E"/>
+            <rect x="-18" y="-6" width="36" height="12" rx="3" fill="#0E9F6E"/>
+          </g>
+          <!-- ground -->
+          <rect x="0" y="380" width="600" height="80" fill="#F5FAFD"/>
+          <!-- vital pulse line across the ground -->
+          <path class="pulse-path" d="M0 420 H210 L235 380 L262 445 L288 400 L312 420 H600" fill="none" stroke="#0E9F6E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+        </svg>
+      </div>
+
+      <!-- Floating glass stat card -->
+      <div class="glass absolute -bottom-7 -left-6 sm:-left-10 rounded-2xl px-5 py-4 shadow-softlg flex items-center gap-3 max-w-[230px]">
+        <span class="w-11 h-11 rounded-full bg-emerald-100 dark:bg-emerald-400/15 grid place-items-center shrink-0">
+          <i data-lucide="heart-pulse" class="w-5 h-5 text-emerald-600"></i>
+        </span>
+        <div>
+          <p class="font-display font-700 text-sm text-navy-900 dark:text-white leading-tight">Always Open</p>
+          <p class="text-xs text-navy-600 dark:text-navy-200/70">24-hour emergency response</p>
+        </div>
+      </div>
+
+      <div class="glass absolute -top-6 -right-4 sm:-right-8 rounded-2xl px-5 py-3.5 shadow-softlg flex items-center gap-3">
+        <span class="w-9 h-9 rounded-full bg-navy-800/10 dark:bg-white/10 grid place-items-center shrink-0">
+          <i data-lucide="badge-check" class="w-4 h-4 text-navy-800 dark:text-emerald-400"></i>
+        </span>
+        <p class="font-display font-700 text-sm text-navy-900 dark:text-white">Trusted Local Care</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section divider: vital line -->
+<div class="max-w-7xl mx-auto px-5 lg:px-8 -mt-2">
+  <svg class="vital-divider" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 14 H520 L540 2 L560 26 L580 8 L598 14 H1200" fill="none" stroke="#0E9F6E" stroke-width="2" opacity="0.35"/>
+  </svg>
+</div>
+
+
+<section id="why" class="py-20 lg:py-28 bg-white dark:bg-navy-900">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-wide uppercase">Why Choose LifeView</span>
+      <h2 class="font-display font-700 text-3xl sm:text-4xl mt-3 text-navy-900 dark:text-white">Care built around you</h2>
+      <p class="mt-4 text-navy-600 dark:text-navy-200/70">Every part of LifeView Medical Hospital is designed to make you feel safe, seen, and cared for — from the moment you walk in.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+      <!-- items -->
+      <div class="reveal card-hover bg-bgsoft dark:bg-navy-800/40 rounded-3xl p-7 border border-navy-800/5 dark:border-white/5">
+        <span class="w-12 h-12 rounded-2xl bg-navy-800/10 dark:bg-emerald-400/10 grid place-items-center mb-5"><i data-lucide="user-round-check" class="w-6 h-6 text-navy-800 dark:text-emerald-400"></i></span>
+        <h3 class="font-display font-600 text-lg text-navy-900 dark:text-white">Professional Doctors</h3>
+        <p class="text-sm text-navy-600 dark:text-navy-200/70 mt-2">Qualified physicians across key specialties, dedicated to accurate diagnosis and honest guidance.</p>
+      </div>
+      <div class="reveal card-hover bg-bgsoft dark:bg-navy-800/40 rounded-3xl p-7 border border-navy-800/5 dark:border-white/5">
+        <span class="w-12 h-12 rounded-2xl bg-navy-800/10 dark:bg-emerald-400/10 grid place-items-center mb-5"><i data-lucide="scan-line" class="w-6 h-6 text-navy-800 dark:text-emerald-400"></i></span>
+        <h3 class="font-display font-600 text-lg text-navy-900 dark:text-white">Modern Equipment</h3>
+        <p class="text-sm text-navy-600 dark:text-navy-200/70 mt-2">Up-to-date diagnostic and treatment technology supporting faster, more reliable results.</p>
+      </div>
+      <div class="reveal card-hover bg-bgsoft dark:bg-navy-800/40 rounded-3xl p-7 border border-navy-800/5 dark:border-white/5">
+        <span class="w-12 h-12 rounded-2xl bg-navy-800/10 dark:bg-emerald-400/10 grid place-items-center mb-5"><i data-lucide="siren" class="w-6 h-6 text-navy-800 dark:text-emerald-400"></i></span>
+        <h3 class="font-display font-600 text-lg text-navy-900 dark:text-white">24/7 Emergency Care</h3>
+        <p class="text-sm text-navy-600 dark:text-navy-200/70 mt-2">Our doors never close. Emergency support is available every hour, every day of the week.</p>
+      </div>
+      <div class="reveal card-hover bg-bgsoft dark:bg-navy-800/40 rounded-3xl p-7 border border-navy-800/5 dark:border-white/5">
+        <span class="w-12 h-12 rounded-2xl bg-navy-800/10 dark:bg-emerald-400/10 grid place-items-center mb-5"><i data-lucide="test-tube-2" class="w-6 h-6 text-navy-800 dark:text-emerald-400"></i></span>
+        <h3 class="font-display font-600 text-lg text-navy-900 dark:text-white">Fast Laboratory Services</h3>
+        <p class="text-sm text-navy-600 dark:text-navy-200/70 mt-2">Efficient testing and prompt results so treatment decisions are never delayed.</p>
+      </div>
+      <div class="reveal card-hover bg-bgsoft dark:bg-navy-800/40 rounded-3xl p-7 border border-navy-800/5 dark:border-white/5">
+        <span class="w-12 h-12 rounded-2xl bg-navy-800/10 dark:bg-emerald-400/10 grid place-items-center mb-5"><i data-lucide="hand-heart" class="w-6 h-6 text-navy-800 dark:text-emerald-400"></i></span>
+        <h3 class="font-display font-600 text-lg text-navy-900 dark:text-white">Patient-Centred Treatment</h3>
+        <p class="text-sm text-navy-600 dark:text-navy-200/70 mt-2">Your comfort and dignity guide every consultation, procedure, and follow-up.</p>
+      </div>
+      <div class="reveal card-hover bg-bgsoft dark:bg-navy-800/40 rounded-3xl p-7 border border-navy-800/5 dark:border-white/5">
+        <span class="w-12 h-12 rounded-2xl bg-navy-800/10 dark:bg-emerald-400/10 grid place-items-center mb-5"><i data-lucide="sparkles" class="w-6 h-6 text-navy-800 dark:text-emerald-400"></i></span>
+        <h3 class="font-display font-600 text-lg text-navy-900 dark:text-white">Clean Environment</h3>
+        <p class="text-sm text-navy-600 dark:text-navy-200/70 mt-2">Rigorous hygiene standards throughout our wards, labs, and waiting areas.</p>
+      </div>
+      <div class="reveal card-hover bg-bgsoft dark:bg-navy-800/40 rounded-3xl p-7 border border-navy-800/5 dark:border-white/5">
+        <span class="w-12 h-12 rounded-2xl bg-navy-800/10 dark:bg-emerald-400/10 grid place-items-center mb-5"><i data-lucide="badge-cent" class="w-6 h-6 text-navy-800 dark:text-emerald-400"></i></span>
+        <h3 class="font-display font-600 text-lg text-navy-900 dark:text-white">Affordable Healthcare</h3>
+        <p class="text-sm text-navy-600 dark:text-navy-200/70 mt-2">Quality care structured to remain accessible for individuals and families.</p>
+      </div>
+      <div class="reveal card-hover bg-bgsoft dark:bg-navy-800/40 rounded-3xl p-7 border border-navy-800/5 dark:border-white/5">
+        <span class="w-12 h-12 rounded-2xl bg-navy-800/10 dark:bg-emerald-400/10 grid place-items-center mb-5"><i data-lucide="graduation-cap" class="w-6 h-6 text-navy-800 dark:text-emerald-400"></i></span>
+        <h3 class="font-display font-600 text-lg text-navy-900 dark:text-white">Experienced Staff</h3>
+        <p class="text-sm text-navy-600 dark:text-navy-200/70 mt-2">A team of nurses, technicians, and clinicians experienced in day-to-day patient care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="py-20 bg-gradient-to-br from-navy-50 via-white to-emerald-50 dark:from-navy-800 dark:via-navy-700 dark:to-navy-800 relative overflow-hidden border-y border-navy-800/5 dark:border-white/5">
+  <svg class="absolute inset-x-0 top-0 opacity-30" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path class="pulse-path" d="M0 20 H500 L520 4 L545 36 L570 10 L595 20 H1200" fill="none" stroke="#0E9F6E" stroke-width="3"/></svg>
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div class="reveal">
+        <p class="font-display font-800 text-4xl sm:text-5xl grad-text"><span data-suffix="/7" data-target="24" class="counter">0</span></p>
+        <p class="text-sm text-navy-600 dark:text-navy-200/80 mt-2 tracking-wide">Hours of Care, Every Day</p>
+      </div>
+      <div class="reveal">
+        <p class="font-display font-800 text-4xl sm:text-5xl grad-text"><span data-suffix="+" data-target="40" class="counter">0</span></p>
+        <p class="text-sm text-navy-600 dark:text-navy-200/80 mt-2 tracking-wide">Experienced Medical Staff</p>
+      </div>
+      <div class="reveal">
+        <p class="font-display font-800 text-4xl sm:text-5xl grad-text"><span data-suffix="+" data-target="10000" class="counter">0</span></p>
+        <p class="text-sm text-navy-600 dark:text-navy-200/80 mt-2 tracking-wide">Patients Served</p>
+      </div>
+      <div class="reveal">
+        <p class="font-display font-800 text-4xl sm:text-5xl grad-text"><span data-suffix="+" data-target="25" class="counter">0</span></p>
+        <p class="text-sm text-navy-600 dark:text-navy-200/80 mt-2 tracking-wide">Modern Medical Equipment</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-20 lg:py-28 bg-bgsoft dark:bg-navy-950">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-wide uppercase">Patient Stories</span>
+      <h2 class="font-display font-700 text-3xl sm:text-4xl mt-3 text-navy-900 dark:text-white">What our patients say</h2>
+      <p class="mt-4 text-navy-600 dark:text-navy-200/70">
+        The testimonials below are sample placeholders written to illustrate tone and layout — they do not represent real patients.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+      <div class="reveal card-hover bg-white dark:bg-navy-800/40 rounded-3xl p-7 shadow-soft border border-navy-800/5 dark:border-white/5">
+        <span class="inline-block text-[11px] font-semibold uppercase tracking-wide text-navy-500 dark:text-navy-200/60 bg-navy-800/5 dark:bg-white/5 px-3 py-1 rounded-full mb-4">Sample testimonial</span>
+        <div class="flex gap-1 text-emerald-500 mb-3" aria-hidden="true"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+        <p class="text-navy-700 dark:text-navy-200/80 text-sm leading-relaxed">"The team attended to me quickly at night and explained every step. I felt genuinely cared for, not just treated."</p>
+        <p class="mt-4 font-semibold text-sm text-navy-900 dark:text-white">— Ama K. <span class="font-normal text-navy-500 dark:text-navy-200/60">(placeholder)</span></p>
+      </div>
+      <div class="reveal card-hover bg-white dark:bg-navy-800/40 rounded-3xl p-7 shadow-soft border border-navy-800/5 dark:border-white/5">
+        <span class="inline-block text-[11px] font-semibold uppercase tracking-wide text-navy-500 dark:text-navy-200/60 bg-navy-800/5 dark:bg-white/5 px-3 py-1 rounded-full mb-4">Sample testimonial</span>
+        <div class="flex gap-1 text-emerald-500 mb-3" aria-hidden="true"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+        <p class="text-navy-700 dark:text-navy-200/80 text-sm leading-relaxed">"Our son's paediatric check-up was smooth from booking to consultation. Clean facility, friendly staff."</p>
+        <p class="mt-4 font-semibold text-sm text-navy-900 dark:text-white">— Kojo A. <span class="font-normal text-navy-500 dark:text-navy-200/60">(placeholder)</span></p>
+      </div>
+      <div class="reveal card-hover bg-white dark:bg-navy-800/40 rounded-3xl p-7 shadow-soft border border-navy-800/5 dark:border-white/5">
+        <span class="inline-block text-[11px] font-semibold uppercase tracking-wide text-navy-500 dark:text-navy-200/60 bg-navy-800/5 dark:bg-white/5 px-3 py-1 rounded-full mb-4">Sample testimonial</span>
+        <div class="flex gap-1 text-emerald-500 mb-3" aria-hidden="true"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+        <p class="text-navy-700 dark:text-navy-200/80 text-sm leading-relaxed">"Lab results came back the same day, which helped my doctor start treatment without delay. Very grateful."</p>
+        <p class="mt-4 font-semibold text-sm text-navy-900 dark:text-white">— Efua S. <span class="font-normal text-navy-500 dark:text-navy-200/60">(placeholder)</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+</main>
+
+<footer class="bg-navy-50 dark:bg-navy-950 text-navy-600 dark:text-navy-200/80 pt-16 pb-8 border-t border-navy-800/5 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-2.5 mb-4">
+          <span class="w-10 h-10 rounded-2xl bg-gradient-to-br from-navy-700 to-emerald-500 flex items-center justify-center"><i data-lucide="activity" class="w-5 h-5 text-white"></i></span>
+          <span class="font-display font-700 text-navy-900 dark:text-white">LifeView Medical Hospital</span>
+        </div>
+        <p class="text-sm leading-relaxed">Exceptional healthcare, delivered with compassion — 24 hours a day, every day, in Accra, Ghana.</p>
+        <div class="flex gap-3 mt-5">
+          <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white dark:bg-white/5 border border-navy-800/10 dark:border-white/10 grid place-items-center hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+          <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white dark:bg-white/5 border border-navy-800/10 dark:border-white/10 grid place-items-center hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="#" aria-label="Twitter / X" class="w-9 h-9 rounded-full bg-white dark:bg-white/5 border border-navy-800/10 dark:border-white/10 grid place-items-center hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+          <a href="https://wa.me/233244287334" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-white dark:bg-white/5 border border-navy-800/10 dark:border-white/10 grid place-items-center hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-colors"><i data-lucide="message-circle" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-display font-600 text-navy-900 dark:text-white mb-4 text-sm tracking-wide uppercase">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="about.html" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">About Us</a></li>
+          <li><a href="gallery.html" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Gallery</a></li>
+          <li><a href="contact.html#faq" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">FAQ</a></li>
+          <li><a href="appointment.html" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Book Appointment</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display font-600 text-navy-900 dark:text-white mb-4 text-sm tracking-wide uppercase">Services</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="services.html" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Emergency Care</a></li>
+          <li><a href="services.html" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Family Medicine</a></li>
+          <li><a href="services.html" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Laboratory Services</a></li>
+          <li><a href="services.html" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Women's Health</a></li>
+          <li><a href="services.html" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Child Health</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display font-600 text-navy-900 dark:text-white mb-4 text-sm tracking-wide uppercase">Contact</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400"></i> Achimota Road, Accra</li>
+          <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 shrink-0 text-emerald-600 dark:text-emerald-400"></i> <a href="tel:0244287334" class="hover:text-emerald-600 dark:hover:text-emerald-400">024 428 7334</a></li>
+          <li class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 shrink-0 text-emerald-600 dark:text-emerald-400"></i> Open 24 Hours</li>
+        </ul>
+        <div class="mt-5 p-3 rounded-xl bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20">
+          <p class="text-xs text-red-600 dark:text-red-300 font-semibold flex items-center gap-1.5"><i data-lucide="siren" class="w-3.5 h-3.5"></i> Emergency: 024 428 7334</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-navy-800/10 dark:border-white/10 mt-12 pt-6 flex flex-col sm:flex-row gap-4 items-center justify-between">
+      <form id="newsletterForm" class="flex w-full sm:w-auto gap-2">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input id="newsletterEmail" type="email" required placeholder="Your email for health updates" class="flex-1 sm:w-64 rounded-full bg-white dark:bg-white/5 border border-navy-800/10 dark:border-white/10 px-4 py-2.5 text-sm placeholder:text-navy-400 dark:placeholder:text-navy-200/50 focus:outline-none focus:ring-2 focus:ring-emerald-400">
+        <button type="submit" class="btn-emerald text-white text-sm font-semibold px-5 py-2.5 rounded-full shrink-0">Subscribe</button>
+      </form>
+      <p class="text-xs text-navy-500 dark:text-navy-200/60 text-center sm:text-right">© <span id="year"></span> LifeView Medical Hospital. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/233244287334" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"
+   class="fixed bottom-6 left-6 z-40 w-14 h-14 rounded-full bg-[#25D366] shadow-softlg grid place-items-center hover:scale-105 transition-transform">
+  <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
+</a>
+
+<!-- Back to top -->
+<button id="backToTop" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full btn-primary text-white shadow-softlg grid place-items-center opacity-0 pointer-events-none translate-y-4 transition-all">
+  <i data-lucide="arrow-up" class="w-5 h-5"></i>
+</button>
+
+
+<script src="script.js"></script>
+</body>
+</html>
